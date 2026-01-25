@@ -1,21 +1,36 @@
 #include<iostream>
 using namespace std;
-void insertionsort(int arr[],int n){
-    for(int i=1;i<n;i++){
-        int temp=arr[i];
-        int j=i-1;
-        for(;j>=0;j--){
-            if(arr[j]>temp){
-                //shift
-                arr[j+1]=arr[j];
+void insertionsort(int arr[], int n){
+
+    // Start from 2nd element (index 1),
+    // because a single element is already sorted
+    for(int i = 1; i < n; i++){
+
+        // Store current element
+        int temp = arr[i];
+
+        // j points to previous index
+        int j = i - 1;
+
+        // Move elements of arr[0..i-1] that are greater than temp
+        // one position ahead of their current position
+        for(; j >= 0; j--){
+
+            if(arr[j] > temp){
+                // Shift bigger element to right
+                arr[j + 1] = arr[j];
             }
-            else{//ruk jao
+            else{
+                // ruk jao — correct position found
                 break;
             }
         }
-        arr[j+1]=temp;
+
+        // Insert temp at its correct position
+        arr[j + 1] = temp;
     }
 }
+
 void printarray(int arr[],int n){
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
@@ -30,4 +45,5 @@ printarray(arr,8);
 }
 // OUTPUT-
 // The sorted array is 
+
 // 2 2 4 8 10 10 15 28
