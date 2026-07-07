@@ -31,3 +31,9 @@ int main() {
 //5
 //16 in b
 //5
+
+// Key Points
+// ✅ Declared outside all functions.
+// ✅ Accessible from any function.
+// ✅ Any function can modify it.
+// ✅ Only one copy of a global variable exists in memory throughout the program.
