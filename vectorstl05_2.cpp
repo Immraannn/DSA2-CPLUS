@@ -113,6 +113,32 @@ int main()
 
 // 0 -> (1,5) (2,8)
 
+// Initialising distances
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<int> dist;
+
+    // Create distance array of size 5
+    dist.resize(5);
+
+    // Initialize distances
+    for(int i = 0; i < dist.size(); i++)
+    {
+        dist[i] = -1;
+    }
+
+    // Print distances
+    for(int x : dist)
+    {
+        cout << x << " ";
+    }
+
+    return 0;
+}
 // 1 ->
 
 // 2 ->
