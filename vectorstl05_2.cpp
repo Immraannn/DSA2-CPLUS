@@ -1,0 +1,62 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    // Number of vertices
+    int V = 4;
+
+    // Create an array of vectors
+    // Each vector stores the neighbours of one vertex
+    vector<int> adj[V];// every v=1,v=2 are separate vector in a row storing edges(neighbour)
+
+    // -------------------------------
+    // Add edges for an undirected graph
+    // -------------------------------
+
+    // Edge : 0 - 1
+    adj[0].push_back(1);
+    adj[1].push_back(0);
+
+    // Edge : 0 - 2
+    adj[0].push_back(2);
+    adj[2].push_back(0);
+
+    // Edge : 0 - 3
+    adj[0].push_back(3);
+    adj[3].push_back(0);
+
+    // Edge : 1 - 2
+    adj[1].push_back(2);
+    adj[2].push_back(1);
+
+    // Print the adjacency list
+    cout << "Adjacency List\n\n";
+
+    for(int i = 0; i < V; i++)
+    {
+        // Print current vertex
+        cout << i << " -> ";
+
+        // Print all neighbours of vertex i
+        for(int neighbour : adj[i])
+        {
+            cout << neighbour << " ";
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
+//Output
+// Adjacency List
+
+// 0 -> 1 2 3
+
+// 1 -> 0 2
+
+// 2 -> 0 1
+
+// 3 -> 0
