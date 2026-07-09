@@ -230,10 +230,55 @@ int main()
              << edge.second
              << endl;
     }
-    //output
- 1 4
-2 7
-3 5
+ 
 
     return 0;
 }
+   //output
+//  1 4
+// 2 7
+// 3 5
+
+
+
+cheatsheet for graph
+
+// Unweighted Graph
+vector<int> adj[V];
+
+// Dynamic Graph
+vector<vector<int>> adj(V);
+
+// Weighted Graph
+vector<pair<int,int>> adj[V];
+
+// Add Edge
+adj[u].push_back(v);
+
+// Add Weighted Edge
+adj[u].emplace_back(v, wt);
+
+// Traverse
+for(int neighbour : adj[node])
+
+// Traverse (Preferred)
+for(const auto &neighbour : adj[node])
+
+// Weighted Traverse
+for(const auto &edge : adj[node])
+{
+    int neighbour = edge.first;
+    int weight = edge.second;
+}
+
+// Number of neighbours
+adj[node].size()
+
+// Remove last neighbour
+adj[node].pop_back()
+
+// Remove all neighbours
+adj[node].clear()
+
+// Check if isolated vertex
+adj[node].empty()
