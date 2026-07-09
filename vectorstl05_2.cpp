@@ -1,3 +1,9 @@
+// vector<int> adj[V];                 // Unweighted graph
+
+// vector<pair<int,int>> adj[V];       // Weighted graph
+
+// vector<vector<int>> adj(V);         // Runtime-sized graph
+
 #include<iostream>
 #include<vector>
 using namespace std;
