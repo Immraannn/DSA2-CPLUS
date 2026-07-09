@@ -10,10 +10,15 @@ int main(){
     // Create a vector of size 5 and initialize all elements to 1
     vector<int> a(5,1);
 
+     // Initialize vector directly
+    vector<int> numbers = {10,20,30,40,50};
+    
+    // Create a vector of size 5 and initialize all elements to 0
+    vector<int> k(5);
+    
     // Create a copy of vector 'a'
     vector<int> last(a);
-
-    // Print the copied vector
+     // Print the copied vector
     cout << "Print last" << endl;
     for(int i : last){
         cout << i << " ";
