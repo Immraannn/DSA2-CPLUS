@@ -139,6 +139,101 @@ int main()
 
     return 0;
 }
+outout
+-1 -1 -1 -1 -1 -1
 // 1 ->
 
 // 2 ->
+
+
+
+ #include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<int> neighbours = {10,20,30};
+
+    // auto becomes int
+    for(auto neighbour : neighbours)
+    {
+        cout << neighbour << " ";
+    }
+
+    return 0;
+}
+//output
+// 10 20 30
+
+
+// Graph example
+for(auto neighbour : adj[node])
+{
+    cout << neighbour << " ";
+}
+
+
+
+
+Auto with pair
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<pair<int,int>> adj;
+
+    // (Neighbour, Weight)
+    adj.emplace_back(1,5);
+    adj.emplace_back(2,8);
+    adj.emplace_back(4,3);
+
+    // auto becomes pair<int,int>
+    for(auto edge : adj)
+    {
+        cout << "Neighbour : "
+             << edge.first
+             << " Weight : "
+             << edge.second
+             << endl;
+    }
+
+    return 0;
+}
+// output
+// Neighbour : 1 Weight : 5
+// Neighbour : 2 Weight : 8
+// Neighbour : 4 Weight : 3
+
+
+// used in djisktra,prims.weighted dfs,bfs
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<pair<int,int>> adj;
+
+    // (Neighbour, Weight)
+    adj.emplace_back(1,4);
+    adj.emplace_back(2,7);
+    adj.emplace_back(3,5);
+
+    for(const auto &edge : adj)
+    {
+        cout << edge.first
+             << " "
+             << edge.second
+             << endl;
+    }
+    //output
+ 1 4
+2 7
+3 5
+
+    return 0;
+}
