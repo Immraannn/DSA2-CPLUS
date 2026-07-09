@@ -60,3 +60,53 @@ int main()
 // 2 -> 0 1
 
 // 3 -> 0
+
+
+TO STORE NEIGHBOUR+ WEIGHT we need two integer to store for weighted Graphs
+
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    int V = 3;
+
+    // Each vector stores (neighbour, weight)
+    vector<pair<int,int>> adj[V];
+
+    // Edge 0 -> 1 (weight = 5)
+    adj[0].push_back({1,5});
+
+    // Edge 0 -> 2 (weight = 8)
+    adj[0].push_back({2,8});
+
+    cout << "Weighted Adjacency List\n\n";
+
+    for(int i = 0; i < V; i++)
+    {
+        cout << i << " -> ";
+
+        for(auto edge : adj[i])
+        {
+            cout << "("
+                 << edge.first
+                 << ","
+                 << edge.second
+                 << ") ";
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
+//OUTPUT
+// Weighted Adjacency List
+
+// 0 -> (1,5) (2,8)
+
+// 1 ->
+
+// 2 ->
