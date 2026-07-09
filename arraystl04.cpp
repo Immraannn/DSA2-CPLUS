@@ -68,4 +68,13 @@ int main()
     return 0;
 }
 //output
-10 20 30 40 50
+// 10 20 30 40 50
+
+
+| `std::array`                 | `vector`                     |
+| ---------------------------- | ---------------------------- |
+| Fixed size                   | Dynamic size                 |
+| Faster (no reallocation)     | May reallocate memory        |
+| Stack allocation (typically) | Heap allocation for elements |
+| Cannot grow                  | Can grow using `push_back()` |
+
