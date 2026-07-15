@@ -1,3 +1,18 @@
+class Solution {
+public:
+    int lengthOfString(string s) {
+        // or use  return s.length
+        int length = 0;
+        // Count each character
+        while (s[length] != '\0') {
+            length++;
+        }
+        return length;
+    }
+};
+
+
+
 #include<iostream>
 using namespace std;
 int main(){
