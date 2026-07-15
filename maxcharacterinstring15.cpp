@@ -1,29 +1,27 @@
-#include<iostream>
-using namespace std;
-char getmaxchar(string s){
-    int arr[26];
-    for(int i=0;i<s.length();i++){
-        char ch=s[i];
-        //lower case
-        int number=0;
-        if(ch>='a'&& ch<='z'){
-            number=ch-'a';
+class Solution {
+public:
+    char maxOccurringCharacter(string s) {
+
+        // Frequency array for 26 lowercase letters
+        vector<int> freq(26, 0);
+
+        // Count frequency of each character
+        for (int i = 0; i < s.length(); i++) {
+            freq[s[i] - 'a']++;
         }
-        else{//upper case
-        number=ch-'A';
+
+        // Find the character with maximum frequency
+        int maxFreq = 0;
+        char answer = 'a';
+
+        for (int i = 0; i < 26; i++) {
+
+            if (freq[i] > maxFreq) {
+                maxFreq = freq[i];
+                answer = i + 'a';
+            }
         }
-        arr[number]++;
+
+        return answer;
     }
-    int maxi=-1,ans=0;
-for(int i=0;i<26;i++){
-if(maxi<arr[i]){
-    ans=i;
-    maxi=arr[i];
-}
-} 
-char finalAns='a'+ans;   
-return finalAns;
-}
-int main(){
-    return 0;
-}
+};
