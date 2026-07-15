@@ -1,3 +1,28 @@
+class Solution {
+public:
+    vector<int> sortArray(vector<int>& nums) {
+        int n = nums.size();
+        // Move the boundary of the unsorted part
+        for (int i = 0; i < n - 1; i++) {
+            // Assume the current element is the minimum
+            int minIndex = i;
+            // Find the smallest element in the remaining array
+            for (int j = i + 1; j < n; j++) {
+
+                if (nums[j] < nums[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            swap(nums[i], nums[minIndex]);
+        }
+        return nums;
+    }
+};
+
+
+
+
+
 #include<iostream>
 using namespace std;
 void selectionsort(int arr[], int n) {
