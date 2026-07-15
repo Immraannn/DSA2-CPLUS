@@ -1,34 +1,45 @@
-#include<iostream>
-#include<vector>
-using namespace std;
-vector<int> reverse(vector<int> arr){
-    int s=0,e=arr.size()-1;
-    while(s<=e){
-        swap(arr[s],arr[e]);
-        s++;
-        e--;
+class Solution {
+public:
+    void reverseArray(vector<int>& nums) {
+        int left = 0;
+        int right = nums.size() - 1;
+        // Continue until both pointers meet
+        while (left < right) {
+            // Swap the left and right elements
+            swap(nums[left], nums[right]);
+            // Move left pointer forward
+            left++;
+            // Move right pointer backward
+            right--;
+        }
     }
-    return arr;
+};
 
-}
-void print(vector<int>arr){
-    for(int i=0;i<arr.size();i++){
-        cout<<arr[i]<<" ";
+
+
+
+class Solution {
+public:
+    vector<int> reverseArray(vector<int>& nums) {
+        int left = 0;
+        int right = nums.size() - 1;
+        // Swap elements from both ends
+        while (left < right) {
+            swap(nums[left], nums[right]);
+            left++;
+            right--;
+        }
+        // Return the reversed vector
+        return nums;
     }
-    cout<<endl;
-}
-int main(){
-vector<int> arr;
-arr.push_back(11);   
-arr.push_back(7);   
-arr.push_back(3);   
-arr.push_back(12);   
-arr.push_back(4);   
-vector<int> ans=reverse(arr);
-cout<<"Printing reverse array "<<endl;
-print(ans);
-    return 0;
-}
-// OUTPUT-
-// Printing reverse array 
-// 4 12 3 7 11 
+};
+
+
+
+| Task                   | Return Type   |
+| ---------------------- | ------------- |
+| Reverse array in-place | `void`        |
+| Return reversed array  | `vector<int>` |
+| Return an index        | `int`         |
+| Return true/false      | `bool`        |
+| Return multiple values | `vector<int>` |
