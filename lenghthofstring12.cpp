@@ -27,3 +27,13 @@ while(name[i]!='\0'){
 cout<<length;
     return 0;
 }
+
+
+
+// | Data Type                       | Preferred Parameter         |
+// | ------------------------------- | --------------------------- |
+// | `int`, `char`, `bool`, `double` | Pass by value (`int x`)     |
+// | `string` (read only)            | `const string& s` ⭐         |
+// | `string` (modify)               | `string& s`                 |
+// | `vector` (read only)            | `const vector<int>& nums` ⭐ |
+// | `vector` (modify)               | `vector<int>& nums`         |
