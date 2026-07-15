@@ -85,5 +85,13 @@ public:
     }
 };
 
+| Function Signature           | Meaning                                                         |
+| ---------------------------- | --------------------------------------------------------------- |
+| `string func(string s)`      | Return a new string                                             |
+| `void func(string& s)`       | Modify the original string                                      |
+| `void func(vector<char>& s)` | Modify the original character array                             |
+| `void func(string s)`        | ❌ Usually incorrect if you expect the caller's string to change |
+
+
 
 
