@@ -1,51 +1,89 @@
-#include<iostream>
-using namespace std;
-bool checkpalindrome(char a[],int n){
-int s=0;
-int e=n-1;
-while(s<=e){
-    if(a[s]!=a[e]){
-        return 0;
-    }else{
-        s++;
-        e--;
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int left = 0;
+        int right = s.length() - 1;
+        // Compare characters from both ends
+        while (left < right) {
+            // If characters don't match,
+            // it is not a palindrome
+            if (s[left] != s[right]) {
+                return false;
+            }
+            // Move both pointers
+            left++;
+            right--;
+        }
+        // All characters matched
+        return true;
     }
-    return 1;
-}
-}
+};
+// case insensitive
 
-int length(char name[]){
-    int i=0,length=0;
-    while(name[i]!='\0'){
-    length++;
-    i++;
-}
-return length;
-}
-void reverse(char name[],int n){
-    int s=0,e=n-1;
-    while(s<=e){
-        swap(name[s],name[e]);
-        s++;
-        e--;
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right) {
+            if (tolower(s[left]) != tolower(s[right])) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
     }
-}
-int main(){
-    char name[20];
-cout<<"Enter your name "<<endl;
-cin>>name;
-cout<<"your name is "<<name<<endl;
-int len=length(name);
-cout<<"Length is "<<len<<endl;
-reverse(name,len);
-cout<<"Reversed name is "<<name<<endl;
-cout<<"palindrome or not :"<<checkpalindrome(name,len);
-    return 0;
-}
-// OUTPUT-
-// Enter your name 
-// noon
-// your name is noon
-// Length is 4
-// Reversed name is noon
-// palindrome or not :1
+};
+
+
+
+// reverse a char array
+
+
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+
+        // Pointer to the first character
+        int left = 0;
+
+        // Pointer to the last character
+        int right = s.size() - 1;
+
+        // Swap characters until both pointers meet
+        while (left < right) {
+
+            swap(s[left], s[right]);
+
+            left++;
+            right--;
+        }
+    }
+};
+
+
+// if input is string
+
+class Solution {
+public:
+    string reverseString(string s) {
+
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right) {
+
+            swap(s[left], s[right]);
+
+            left++;
+            right--;
+        }
+
+        return s;
+    }
+};
+
+
+
