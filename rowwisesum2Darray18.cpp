@@ -1,3 +1,24 @@
+class Solution {
+public:
+    vector<int> rowWiseSum(vector<vector<int>>& matrix) {
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+        vector<int> ans;
+        for (int i = 0; i < rows; i++) {
+            int sum = 0;
+            for (int j = 0; j < cols; j++) {
+                sum += matrix[i][j];
+            }
+            ans.push_back(sum);
+        }
+        return ans;
+    }
+};
+
+
+
+
+
 #include<iostream>
 using namespace std;
 void printsum(int arr[][4],int r,int c){
