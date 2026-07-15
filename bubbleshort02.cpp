@@ -1,26 +1,35 @@
-#include<iostream>
-using namespace std;
-void bubblesort(int arr[],int n){
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                swap(arr[j],arr[j+1]);
+class Solution {
+public:
+    // Change the return type according to the problem
+    // void bubbleSort(vector<int>& nums)
+    // OR
+    // vector<int> sortArray(vector<int>& nums)
+
+    vector<int> sortArray(vector<int>& nums) {
+
+        int n = nums.size();
+
+        // Number of passes
+        for (int i = 0; i < n - 1; i++) {
+
+            bool swapped = false;
+
+            // Compare adjacent elements
+            for (int j = 0; j < n - i - 1; j++) {
+
+                // Swap if elements are in the wrong order
+                if (nums[j] > nums[j + 1]) {
+
+                    swap(nums[j], nums[j + 1]);
+                    swapped = true;
+                }
             }
+
+            // Stop early if the array is already sorted
+            if (!swapped)
+                break;
         }
-}
-}
-void printarray(int arr[],int n){
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
+
+        return nums;   // Remove this line if the function is void
     }
-}
-int main(){
-int arr[8]={15,2,8,4,10,28,2,10}; 
-cout<<"The sorted array is "<<endl;
-bubblesort(arr,8);
-printarray(arr,8);
-   return 0;
-}
-// OUTPUT-
-// The sorted array is 
-// 2 2 4 8 10 10 15 28
+};
