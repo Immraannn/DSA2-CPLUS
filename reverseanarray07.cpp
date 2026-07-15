@@ -34,12 +34,15 @@ public:
     }
 };
 
+| Return Type           | Returns               | Example                        |
+| --------------------- | --------------------- | ------------------------------ |
+| `int`                 | One integer           | Index, sum, maximum value      |
+| `bool`                | `true` or `false`     | Search, palindrome check       |
+| `char`                | One character         | First unique character         |
+| `string`              | One string            | Reverse string, decoded string |
+| `vector<int>`         | Entire integer vector | Sorted array, reversed array   |
+| `vector<vector<int>>` | 2D vector             | 3Sum, subsets                  |
+| `void`                | Nothing               | Modify array in place          |
 
 
-| Task                   | Return Type   |
-| ---------------------- | ------------- |
-| Reverse array in-place | `void`        |
-| Return reversed array  | `vector<int>` |
-| Return an index        | `int`         |
-| Return true/false      | `bool`        |
-| Return multiple values | `vector<int>` |
+
