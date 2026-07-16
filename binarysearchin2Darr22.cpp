@@ -1,66 +1,30 @@
-#include<iostream>
-using namespace std;
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
 
-// Function to search target element in a sorted 2D matrix
-bool searchMatrix(int arr[3][4], int target, int r, int c){
+        int rows = matrix.size();
+        int cols = matrix[0].size();
 
-    // Binary search start index
-    int s = 0;
+        int start = 0;
+        int end = rows * cols - 1;
 
-    // Binary search end index
-    int e = r * c - 1;
+        while (start <= end) {
 
-    // Continue until search space becomes empty
-    while(s <= e){
+            int mid = start + (end - start) / 2;
 
-        // Calculate middle index
-        int mid = s + (e - s) / 2;
+            int row = mid / cols;
+            int col = mid % cols;
 
-        // Convert 1D index into 2D row and column
-        int element = arr[mid / c][mid % c];
+            if (matrix[row][col] == target)
+                return true;
 
-        // Target found
-        if(element == target){
-            return true;
+            else if (matrix[row][col] < target)
+                start = mid + 1;
+
+            else
+                end = mid - 1;
         }
 
-        // Search in the right half
-        else if(element < target){
-            s = mid + 1;
-        }
-
-        // Search in the left half
-        else{
-            e = mid - 1;
-        }
+        return false;
     }
-
-    // Target not found
-    return false;
-}
-
-int main(){
-
-    // Declare a 3 × 4 matrix
-    int arr[3][4];
-
-    // Input matrix elements
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 4; j++){
-            cin >> arr[i][j];
-        }
-    }
-
-    // Search for 13 and print the result
-    // Output:
-    // 1 -> Found
-    // 0 -> Not Found
-    cout << searchMatrix(arr, 13, 3, 4);
-
-    return 0;
-}
-// OUTPUT-
-// 11 12 13 14
-// 15 16 17 18
-// 19 20 21 22
-// 1
+};
