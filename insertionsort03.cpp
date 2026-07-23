@@ -1,49 +1,61 @@
-#include<iostream>
-using namespace std;
-void insertionsort(int arr[], int n){
+class Solution {
+public:
+    vector<int> sortArray(vector<int>& nums) {
 
-    // Start from 2nd element (index 1),
-    // because a single element is already sorted
-    for(int i = 1; i < n; i++){
+        int n = nums.size();
 
-        // Store current element
-        int temp = arr[i];
+        for (int i = 1; i < n; i++) {
 
-        // j points to previous index
-        int j = i - 1;
+            int key = nums[i];
+            int j = i - 1;
 
-        // Move elements of arr[0..i-1] that are greater than temp
-        // one position ahead of their current position
-        for(; j >= 0; j--){
-
-            if(arr[j] > temp){
-                // Shift bigger element to right
-                arr[j + 1] = arr[j];
+            // Shift larger elements to the right
+            while (j >= 0 && nums[j] > key) {
+                nums[j + 1] = nums[j];
+                j--;
             }
-            else{
-                // ruk jao — correct position found
-                break;
-            }
+
+            // Place the key at its correct position
+            nums[j + 1] = key;
         }
 
-        // Insert temp at its correct position
-        arr[j + 1] = temp;
+        return nums;
+    }
+};
+
+// cp style
+#include <bits/stdc++.h>
+using namespace std;
+
+void insertionSort(vector<int>& arr)
+{
+    int n = arr.size();
+
+    for (int i = 1; i < n; i++)
+    {
+        int key = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        arr[j + 1] = key;
     }
 }
 
-void printarray(int arr[],int n){
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
+int main()
+{
+    vector<int> arr = {6, 2, 8, 4, 1};
+
+    insertionSort(arr);
+
+    for (int x : arr)
+    {
+        cout << x << " ";
     }
-}
-int main(){
-int arr[8]={15,2,8,4,10,28,2,10}; 
-cout<<"The sorted array is "<<endl;
-insertionsort(arr,8);
-printarray(arr,8);
+
     return 0;
 }
-// OUTPUT-
-// The sorted array is 
-
-// 2 2 4 8 10 10 15 28
