@@ -19,7 +19,7 @@ public:
 
             // If the current character appears more than once,
             // shrink the window from the left until it becomes unique
-            while (freq[s[right]] > 1) {
+            while (freq[s[right]] > 1) {// dont run the loop until anyone freq >!
 
                 // Remove the leftmost character from the window
                 freq[s[left]]--;
