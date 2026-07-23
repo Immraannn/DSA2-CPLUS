@@ -93,5 +93,17 @@ public:
 | `void func(string s)`        | ❌ Usually incorrect if you expect the caller's string to change |
 
 
+// concept
+while (...)
+{
+    if (...)
+    {
+        return false;   // Entire function ends here
+    }
+}
+
+cout << "Hello";   // This will never execute if return is reached.
+
+
 
 
