@@ -1,17 +1,3 @@
-class Solution {
-public:
-    string removeCharacter(string s, char target) {
-        string ans;
-
-        for (char ch : s) {
-            if (ch != target)
-                ans += ch;
-        }
-
-        return ans;
-    }
-};
-
 
 class Solution {
 public:
