@@ -1,38 +1,23 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        int left = 0;
-        int right = s.length() - 1;
-        // Compare characters from both ends
-        while (left < right) {
-            // If characters don't match,
-            // it is not a palindrome
-            if (s[left] != s[right]) {
+        int l = 0;
+        int r = s.length() - 1;
+        while (l < r) {
+            if (!isalnum(s[l])) {
+                l++;
+                continue;
+            }
+            if (!isalnum(s[r])) {
+                r--;
+                continue;
+            }
+            if (tolower(s[l]) != tolower(s[r])) {
                 return false;
             }
-            // Move both pointers
-            left++;
-            right--;
+            l++;
+            r--;
         }
-        // All characters matched
-        return true;
-    }
-};
-// case insensitive
-
-class Solution {
-public:
-    bool isPalindrome(string s) {
-        int left = 0;
-        int right = s.length() - 1;
-        while (left < right) {
-            if (tolower(s[left]) != tolower(s[right])) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-
         return true;
     }
 };
