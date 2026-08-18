@@ -1,24 +1,21 @@
 class Solution {
 public:
     char maxOccurringCharacter(string s) {
+        unordered_map<char, int> freq;
 
-        // Frequency array for 26 lowercase letters
-        vector<int> freq(26, 0);
-
-        // Count frequency of each character
-        for (int i = 0; i < s.length(); i++) {
-            freq[s[i] - 'a']++;
+        // Count frequency
+        for (char ch : s) {
+            freq[ch]++;
         }
 
-        // Find the character with maximum frequency
+        // Find maximum
+        char answer = s[0];
         int maxFreq = 0;
-        char answer = 'a';
 
-        for (int i = 0; i < 26; i++) {
-
-            if (freq[i] > maxFreq) {
-                maxFreq = freq[i];
-                answer = i + 'a';
+        for (auto it : freq) {
+            if (it.second > maxFreq) {
+                maxFreq = it.second;
+                answer = it.first;
             }
         }
 
