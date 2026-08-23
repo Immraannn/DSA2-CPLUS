@@ -1,7 +1,155 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+
+
+    // =====================================================
+    // 1. INITIALIZE EMPTY STRING
+    // =====================================================
+
+    string s = "";
+
+    cout << s << endl;
+    // Output: empty
+
+
+    // =====================================================
+    // 2. APPENDING USING +=
+    // =====================================================
+
+    s += "Hello";
+
+    cout << s << endl;
+    // Output: Hello
+
+    s += " World";
+
+    cout << s << endl;
+    // Output: Hello World
+
+
+    // =====================================================
+    // 3. APPENDING A CHARACTER
+    // =====================================================
+
+    s += '!';
+
+    cout << s << endl;
+    // Output: Hello World!
+
+
+    // =====================================================
+    // 4. APPENDING USING push_back()
+    // =====================================================
+
+    string ans = "";
+
+    ans.push_back('a');
+    ans.push_back('b');
+    ans.push_back('c');
+
+    cout << ans << endl;
+    // Output: abc
+
+
+    // =====================================================
+    // 5. APPENDING ANOTHER STRING
+    // =====================================================
+
+    string result = "";
+
+    result += "Hello";
+    result += " ";
+    result += "World";
+
+    cout << result << endl;
+    // Output: Hello World
+
+
+    // =====================================================
+    // 6. INSERT INTO EMPTY STRING
+    // =====================================================
+
+    string x = "";
+
+    x.insert(0, "Hello");
+
+    cout << x << endl;
+    // Output: Hello
+
+
+    // =====================================================
+    // 7. INSERT AT DIFFERENT POSITIONS
+    // =====================================================
+
+    string y = "";
+
+    y += "Helo";
+
+    // Insert 'l' at index 2
+    y.insert(2, "l");
+
+    cout << y << endl;
+    // Output: Hello
+
+
+    // Insert " World" at index 5
+    y.insert(5, " World");
+
+    cout << y << endl;
+    // Output: Hello World
+
+
+    // =====================================================
+    // 8. INSERT CHARACTER
+    // =====================================================
+
+    string z = "Hllo";
+
+    z.insert(1, 1, 'e');
+
+    cout << z << endl;
+    // Output: Hello
+
+
+    // =====================================================
+    // 9. BUILDING ANSWER STRING ⭐
+    // =====================================================
+
+    string original = "abcde";
+    string answer = "";
+
+    for(char ch : original) {
+
+        if(ch != 'c') {
+            answer += ch;
+        }
+    }
+
+    cout << answer << endl;
+    // Output: abde
+
+
+    // =====================================================
+    // 10. BUILD STRING USING CONDITIONS ⭐
+    // =====================================================
+
+    string str = "a1b2c3";
+    string letters = "";
+
+    for(char ch : str) {
+
+        if(isalpha(ch)) {
+            letters += ch;
+        }
+    }
+
+    cout << letters << endl;
+    // Output: abc
+
+
+    return 0;
+}
 
     // =========================================================
     // 1. DECLARATION & BASIC ACCESS
