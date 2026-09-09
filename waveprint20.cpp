@@ -8,14 +8,10 @@
 class Solution {
 public:
     vector<int> wavePrint(vector<vector<int>>& matrix) {
-
         int rows = matrix.size();
         int cols = matrix[0].size();
-
         vector<int> ans;
-
         for (int j = 0; j < cols; j++) {
-
             // Even column: Top to Bottom
             if (j % 2 == 0) {
                 for (int i = 0; i < rows; i++) {
@@ -47,14 +43,10 @@ public:
 class Solution {
 public:
     vector<int> wavePrint(vector<vector<int>>& matrix) {
-
         int rows = matrix.size();
         int cols = matrix[0].size();
-
         vector<int> ans;
-
         for (int i = 0; i < rows; i++) {
-
             // Even row: Left to Right
             if (i % 2 == 0) {
                 for (int j = 0; j < cols; j++) {
